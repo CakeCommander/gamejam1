@@ -60,6 +60,7 @@
   <ItemGroup>
      <Compile Include="Assets\Code\CameraController.cs" />
      <Compile Include="Assets\Code\Character.cs" />
+     <Compile Include="Assets\Code\Cop.cs" />
      <Compile Include="Assets\Code\GameManager.cs" />
      <Compile Include="Assets\Code\Player.cs" />
      <Compile Include="Assets\Code\UIController.cs" />

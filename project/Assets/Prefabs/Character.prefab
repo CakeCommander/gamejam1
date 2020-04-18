@@ -11,7 +11,8 @@ GameObject:
   - component: {fileID: 6532687789761376670}
   - component: {fileID: 6532687789761376669}
   - component: {fileID: 6532687789761376668}
-  m_Layer: 0
+  - component: {fileID: 4255630925982048770}
+  m_Layer: 8
   m_Name: Character
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -43,7 +44,7 @@ NavMeshAgent:
   m_Enabled: 1
   m_AgentTypeID: 0
   m_Radius: 0.5
-  m_Speed: 3.5
+  m_Speed: 4
   m_Acceleration: 8
   avoidancePriority: 50
   m_AngularSpeed: 120
@@ -71,6 +72,20 @@ MonoBehaviour:
   _moveRadius: 25
   _minWaitDelay: 0.5
   _maxWaitDelay: 2
+--- !u!136 &4255630925982048770
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6532687789761376671}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  m_Radius: 0.5
+  m_Height: 2
+  m_Direction: 1
+  m_Center: {x: 0, y: 1.5, z: 0}
 --- !u!1 &6532687789797481868
 GameObject:
   m_ObjectHideFlags: 0
@@ -82,8 +97,7 @@ GameObject:
   - component: {fileID: 6532687789797481859}
   - component: {fileID: 6532687789797481856}
   - component: {fileID: 6532687789797481857}
-  - component: {fileID: 6532687789797481858}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Mesh
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -151,17 +165,3 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
---- !u!136 &6532687789797481858
-CapsuleCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6532687789797481868}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  m_Radius: 0.5
-  m_Height: 2
-  m_Direction: 1
-  m_Center: {x: 0, y: 0, z: 0}
