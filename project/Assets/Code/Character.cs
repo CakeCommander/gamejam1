@@ -15,6 +15,8 @@ public class Character : MonoBehaviour
     
     [SerializeField] private float _maxWaitDelay = 2f;
 
+    [SerializeField] private Animator _anim;
+    
     private Vector3 _startPos;
     
     private bool _waitingForPath = false;
@@ -22,6 +24,7 @@ public class Character : MonoBehaviour
     {
         _startPos = transform.position;
         GetNewDesination();
+        _anim.SetFloat("Move", 0);
     }
 
     // Update is called once per frame
@@ -35,11 +38,13 @@ public class Character : MonoBehaviour
                 {
                     _waitingForPath = true;
                     Invoke(nameof(GetNewDesination), UnityEngine.Random.Range(_minWaitDelay, _maxWaitDelay));
+                    _anim.SetFloat("Move", 0);
                 }
             }
             else
             {
                 FaceDesitination();
+                _anim.SetFloat("Move", 1);
             }
         }
     }

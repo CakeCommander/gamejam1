@@ -10,3 +10,5 @@ project/.idea/
 project/build/
 
 project/build.zip
+
+project/Assembly-CSharp.csproj

@@ -28,14 +28,17 @@ public class Cop : MonoBehaviour
 
     [SerializeField] private float _killRadius = 3.0f;
     
+    [SerializeField] private Animator _anim;
+
+    
     void Start()
     {
         _startPos = transform.position;
         GetNewDesination();
         InvokeRepeating(nameof(CheckForTargets), 1f, 1f);
+        _anim.SetFloat("Move", 0);
     }
-
-    // Update is called once per frame
+    
     void Update()
     {
         if (_target != null)
@@ -45,14 +48,16 @@ public class Cop : MonoBehaviour
             if (Vector3.Distance(transform.position,  _target.position) < _killRadius)
             {
                 _target.GetComponent<Player>()?.OnCaught();
-                
+                _anim.SetTrigger("TapBuilding");
                 GameObject.Destroy(_target.gameObject);
                 _waitingForPath = true;
                 Invoke(nameof(GetNewDesination), UnityEngine.Random.Range(_minWaitDelay, _maxWaitDelay));
+                _anim.SetFloat("Move", 0);
             }
             else
             {
               FaceDesitination();
+              _anim.SetFloat("Move", 1);
             }
         }
         else
@@ -65,11 +70,13 @@ public class Cop : MonoBehaviour
                     {
                         _waitingForPath = true;
                         Invoke(nameof(GetNewDesination), UnityEngine.Random.Range(_minWaitDelay, _maxWaitDelay));
+                        _anim.SetFloat("Move", 0);
                     }
                 }
                 else
                 {
                     FaceDesitination();
+                    _anim.SetFloat("Move", 1);
                 }
             }
         }
