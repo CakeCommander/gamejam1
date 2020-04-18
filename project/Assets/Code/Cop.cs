@@ -19,7 +19,8 @@ public class Cop : MonoBehaviour
     [SerializeField] private float _maxWaitDelay = 2f;
 
     [SerializeField] private LayerMask _targetLayer;
-    
+    [SerializeField] private Animator _anim;
+
     private Vector3 _startPos;
     
     private bool _waitingForPath = false;
@@ -31,6 +32,7 @@ public class Cop : MonoBehaviour
     void Start()
     {
         _startPos = transform.position;
+        _anim.SetFloat("Move", 0);
         GetNewDesination();
         InvokeRepeating(nameof(CheckForTargets), 1f, 1f);
     }
@@ -45,14 +47,16 @@ public class Cop : MonoBehaviour
             if (Vector3.Distance(transform.position,  _target.position) < _killRadius)
             {
                 _target.GetComponent<Player>()?.OnCaught();
-                
-                GameObject.Destroy(_target.gameObject);
+                _anim.SetFloat("Move", 0);
+                _anim.SetTrigger("TapBuilding");
+ ;               GameObject.Destroy(_target.gameObject);
                 _waitingForPath = true;
                 Invoke(nameof(GetNewDesination), UnityEngine.Random.Range(_minWaitDelay, _maxWaitDelay));
             }
             else
             {
               FaceDesitination();
+              _anim.SetFloat("Move", 1);
             }
         }
         else
@@ -65,11 +69,13 @@ public class Cop : MonoBehaviour
                     {
                         _waitingForPath = true;
                         Invoke(nameof(GetNewDesination), UnityEngine.Random.Range(_minWaitDelay, _maxWaitDelay));
+                        _anim.SetFloat("Move", 0);
                     }
                 }
                 else
                 {
                     FaceDesitination();
+                    _anim.SetFloat("Move", 1);
                 }
             }
         }

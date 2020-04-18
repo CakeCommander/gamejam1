@@ -1,5 +1,4 @@
-﻿using System.Collections;
-using System.Collections.Generic;
+﻿using System;
 using UnityEngine;
 
 public class Player : MonoBehaviour
@@ -10,12 +9,19 @@ public class Player : MonoBehaviour
     [SerializeField] private GameManager _manager;
 
     [SerializeField] private Rigidbody _body;
-    
-    
+
+    [SerializeField] private Animator _anim;
+
+    private void Start()
+    {
+        _anim.SetFloat("Move", 0);
+    }
+
     void Update()
     {
         if (!Input.GetMouseButton(0))
         {
+            _anim.SetFloat("Move", 0);
             return;
         }
         
@@ -25,9 +31,11 @@ public class Player : MonoBehaviour
         
         if (!Physics.Raycast(mouseRay, out hitInfo))
         {
+            _anim.SetFloat("Move", 0);
             return;
         }
 
+        _anim.SetFloat("Move", 1);
         var mousePos = hitInfo.point;
         mousePos.y = 0;
         

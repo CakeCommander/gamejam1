@@ -76,6 +76,7 @@ MonoBehaviour:
   _targetLayer:
     serializedVersion: 2
     m_Bits: 256
+  _anim: {fileID: 5498300725174719637}
   _killRadius: 2
 --- !u!1 &2645499227266570378
 GameObject:
@@ -243,6 +244,12 @@ PrefabInstance:
 --- !u!4 &4694815596705630293 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 6072335643338921732, guid: 5a1f085691746a242b9604f091a85576,
+    type: 3}
+  m_PrefabInstance: {fileID: 1540812651493498705}
+  m_PrefabAsset: {fileID: 0}
+--- !u!95 &5498300725174719637 stripped
+Animator:
+  m_CorrespondingSourceObject: {fileID: 6426623000564288452, guid: 5a1f085691746a242b9604f091a85576,
     type: 3}
   m_PrefabInstance: {fileID: 1540812651493498705}
   m_PrefabAsset: {fileID: 0}
