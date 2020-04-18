@@ -6,6 +6,8 @@ public class Player : MonoBehaviour
 {
     [SerializeField]
     private float _speed;
+
+    [SerializeField] private GameManager _manager;
     
     
     void Update()
@@ -32,6 +34,13 @@ public class Player : MonoBehaviour
 
         var dir = (mousePos - currentPos).normalized;
 
+        
         transform.Translate(dir*_speed*Time.deltaTime);
+
+        var newPos = transform.position;
+        newPos.y = 0;
+
+        
+        _manager.DistanceTravelled(Vector3.Distance(currentPos, newPos));
     }
 }
