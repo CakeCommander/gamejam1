@@ -38,13 +38,14 @@ public class Cop : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-
         if (_target != null)
         {
             _agent.SetDestination(_target.position);
 
             if (Vector3.Distance(transform.position,  _target.position) < _killRadius)
             {
+                _target.GetComponent<Player>()?.OnCaught();
+                
                 GameObject.Destroy(_target.gameObject);
                 _waitingForPath = true;
                 Invoke(nameof(GetNewDesination), UnityEngine.Random.Range(_minWaitDelay, _maxWaitDelay));

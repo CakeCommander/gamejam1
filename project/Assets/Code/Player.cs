@@ -11,6 +11,7 @@ public class Player : MonoBehaviour
 
     [SerializeField] private Rigidbody _body;
     
+    
     void Update()
     {
         if (!Input.GetMouseButton(0))
@@ -45,5 +46,10 @@ public class Player : MonoBehaviour
         _manager.DistanceTravelled(Vector3.Distance(currentPos, newPos));
 
         transform.forward = dir;
+    }
+
+    public void OnCaught()
+    {
+        _manager.OnCaught();
     }
 }

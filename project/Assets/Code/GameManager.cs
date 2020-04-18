@@ -64,4 +64,10 @@ public class GameManager : MonoBehaviour
             _ui.StartGame();
         }
     }
+
+    public void OnCaught()
+    {
+        _gameComplete = true;
+        _ui.OnGameLost();
+    }
 }
