@@ -47,7 +47,7 @@ NavMeshAgent:
   m_Speed: 8
   m_Acceleration: 8
   avoidancePriority: 50
-  m_AngularSpeed: 120
+  m_AngularSpeed: 1000
   m_StoppingDistance: 0
   m_AutoTraverseOffMeshLink: 1
   m_AutoBraking: 1
@@ -71,8 +71,8 @@ MonoBehaviour:
   _agent: {fileID: 2645499227234399387}
   _moveRadius: 25
   _targetRadius: 15
-  _minWaitDelay: 1
-  _maxWaitDelay: 1.5
+  _minWaitDelay: 1.5
+  _maxWaitDelay: 3
   _targetLayer:
     serializedVersion: 2
     m_Bits: 256
