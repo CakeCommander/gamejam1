@@ -14,6 +14,7 @@ public class GameManager : MonoBehaviour
     private UIController _ui;
     
     private bool _gameStarted = false;
+    private bool _gameComplete = false;
 
     void Start()
     {
@@ -24,11 +25,16 @@ public class GameManager : MonoBehaviour
 
     public void DistanceTravelled(float dist)
     {
-        _distanceLeft -= (dist/2);
+        if (_gameComplete)
+        {
+            return;
+        }
+        _distanceLeft -= (dist);
 
         if (_distanceLeft <= 0)
         {
-            //TODO win
+            _gameComplete = true;
+            _ui.OnGameWon();
         }
         
         _ui.UpdateDistance(_distanceLeft);
@@ -36,6 +42,10 @@ public class GameManager : MonoBehaviour
 
     void Update()
     {
+        if (_gameComplete)
+        {
+            return;
+        }
         if (_gameStarted)
         {
             _timeLeft -= Time.deltaTime;
@@ -43,9 +53,9 @@ public class GameManager : MonoBehaviour
 
             if (_timeLeft <= 0)
             {
-                //TODO lose
+                _gameComplete = true;
+                _ui.OnGameLost();
             }
-            
         }
 
         if (Input.GetMouseButtonDown(0))

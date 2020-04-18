@@ -1,7 +1,9 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class UIController : MonoBehaviour
 {
@@ -9,6 +11,28 @@ public class UIController : MonoBehaviour
     [SerializeField] private TextMeshProUGUI _distanceLeft;
 
     [SerializeField] private GameObject _instructions;
+    
+    [SerializeField]
+    private GameObject _win;
+
+    [SerializeField]
+    private GameObject _lose;
+
+
+    private void Start()
+    {
+        _instructions.SetActive(true);
+    }
+
+    public void OnGameWon()
+    {
+        _win.SetActive(true);
+    }
+
+    public void OnGameLost()
+    {
+        _lose.SetActive(true);
+    }
     
     public void UpdateTime(float time)
     {
@@ -24,4 +48,10 @@ public class UIController : MonoBehaviour
     {
         _instructions.SetActive(false);
     }
+
+    public void OnRestart()
+    {
+        SceneManager.LoadScene(0);
+    }
+    
 }
