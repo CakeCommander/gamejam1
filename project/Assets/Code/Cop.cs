@@ -43,9 +43,15 @@ public class Cop : MonoBehaviour
         {
             _agent.SetDestination(_target.position);
 
-            if (_agent.remainingDistance < _killRadius)
+            if (Vector3.Distance(transform.position,  _target.position) < _killRadius)
             {
                 GameObject.Destroy(_target.gameObject);
+                _waitingForPath = true;
+                Invoke(nameof(GetNewDesination), UnityEngine.Random.Range(_minWaitDelay, _maxWaitDelay));
+            }
+            else
+            {
+              FaceDesitination();
             }
         }
         else
@@ -60,12 +66,24 @@ public class Cop : MonoBehaviour
                         Invoke(nameof(GetNewDesination), UnityEngine.Random.Range(_minWaitDelay, _maxWaitDelay));
                     }
                 }
+                else
+                {
+                    FaceDesitination();
+                }
             }
         }
     }
 
+    private void FaceDesitination()
+    {
+        var dir = _agent.destination - transform.position;
+        dir.y = 0;
+        transform.forward = dir;
+    }
+
     private void CheckForTargets()
     {
+        _target = null;
         var targets = Physics.OverlapSphere(transform.position, _targetRadius, _targetLayer);
 
         if (targets.Length <= 0)
