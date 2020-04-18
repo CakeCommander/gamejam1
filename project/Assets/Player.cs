@@ -7,9 +7,7 @@ public class Player : MonoBehaviour
     [SerializeField]
     private float _speed;
     
-   
-
-
+    
     void Update()
     {
         if (!Input.GetMouseButton(0))
