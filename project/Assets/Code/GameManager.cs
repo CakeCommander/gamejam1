@@ -29,7 +29,7 @@ public class GameManager : MonoBehaviour
         {
             return;
         }
-        _distanceLeft -= (dist);
+        _distanceLeft -= (dist*0.6f);
 
         if (_distanceLeft <= 0)
         {
