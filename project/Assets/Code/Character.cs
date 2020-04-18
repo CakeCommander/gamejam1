@@ -37,7 +37,18 @@ public class Character : MonoBehaviour
                     Invoke(nameof(GetNewDesination), UnityEngine.Random.Range(_minWaitDelay, _maxWaitDelay));
                 }
             }
+            else
+            {
+                FaceDesitination();
+            }
         }
+    }
+    
+    private void FaceDesitination()
+    {
+        var dir = _agent.destination - transform.position;
+        dir.y = 0;
+        transform.forward = dir;
     }
 
     private void GetNewDesination()

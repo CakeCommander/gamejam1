@@ -43,5 +43,7 @@ public class Player : MonoBehaviour
 
         
         _manager.DistanceTravelled(Vector3.Distance(currentPos, newPos));
+
+        transform.forward = dir;
     }
 }
