@@ -5472,6 +5472,11 @@ PrefabInstance:
       propertyPath: m_SizeDelta.y
       value: 300
       objectReference: {fileID: 0}
+    - target: {fileID: 1928325034412166206, guid: 60021c8403865474f8cd39753d714861,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 2102368701847613880, guid: 60021c8403865474f8cd39753d714861,
         type: 3}
       propertyPath: m_Name
@@ -5585,22 +5590,44 @@ PrefabInstance:
     - target: {fileID: 2102368701877412565, guid: 60021c8403865474f8cd39753d714861,
         type: 3}
       propertyPath: m_fontSizeMin
-      value: 72
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 2102368701877412565, guid: 60021c8403865474f8cd39753d714861,
         type: 3}
       propertyPath: m_fontSize
-      value: 72
+      value: 58.3
       objectReference: {fileID: 0}
     - target: {fileID: 2102368701877412565, guid: 60021c8403865474f8cd39753d714861,
         type: 3}
       propertyPath: m_firstOverflowCharacterIndex
-      value: 30
+      value: -1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2102368701877412565, guid: 60021c8403865474f8cd39753d714861,
+        type: 3}
+      propertyPath: m_text
+      value: 'Run 500m before time runs out
+
+        Avoid cops'
+      objectReference: {fileID: 0}
+    - target: {fileID: 2102368701877412565, guid: 60021c8403865474f8cd39753d714861,
+        type: 3}
+      propertyPath: m_textInfo.lineCount
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 2102368701877412565, guid: 60021c8403865474f8cd39753d714861,
+        type: 3}
+      propertyPath: m_textInfo.characterCount
+      value: 40
       objectReference: {fileID: 0}
     - target: {fileID: 2102368701877412566, guid: 60021c8403865474f8cd39753d714861,
         type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -716
+      value: -748
+      objectReference: {fileID: 0}
+    - target: {fileID: 2102368701877412566, guid: 60021c8403865474f8cd39753d714861,
+        type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 200
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 60021c8403865474f8cd39753d714861, type: 3}
