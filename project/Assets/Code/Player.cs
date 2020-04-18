@@ -8,7 +8,8 @@ public class Player : MonoBehaviour
     private float _speed;
 
     [SerializeField] private GameManager _manager;
-    
+
+    [SerializeField] private Rigidbody _body;
     
     void Update()
     {
@@ -35,9 +36,9 @@ public class Player : MonoBehaviour
         var dir = (mousePos - currentPos).normalized;
 
         
-        transform.Translate(dir*_speed*Time.deltaTime);
+        _body.MovePosition(_body.position + dir*_speed*Time.deltaTime);
 
-        var newPos = transform.position;
+        var newPos = _body.position;
         newPos.y = 0;
 
         
