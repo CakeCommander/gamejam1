@@ -15,12 +15,15 @@ public class Character : MonoBehaviour
     
     [SerializeField] private float _maxWaitDelay = 2f;
 
+    [SerializeField] private Animator _anim;
+    
     private Vector3 _startPos;
     
     private bool _waitingForPath = false;
     void Start()
     {
         _startPos = transform.position;
+        _anim.SetFloat("Move", 0);
         GetNewDesination();
     }
 
@@ -33,12 +36,14 @@ public class Character : MonoBehaviour
             {
                 if (!_agent.hasPath || _agent.velocity.sqrMagnitude == 0f)
                 {
+                    _anim.SetFloat("Move", 0);
                     _waitingForPath = true;
                     Invoke(nameof(GetNewDesination), UnityEngine.Random.Range(_minWaitDelay, _maxWaitDelay));
                 }
             }
             else
             {
+                _anim.SetFloat("Move", 1);
                 FaceDesitination();
             }
         }
