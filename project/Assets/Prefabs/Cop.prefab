@@ -70,12 +70,12 @@ MonoBehaviour:
   _agent: {fileID: 2645499227234399387}
   _moveRadius: 25
   _targetRadius: 15
-  _minWaitDelay: 0.5
+  _minWaitDelay: 1
   _maxWaitDelay: 1.5
   _targetLayer:
     serializedVersion: 2
     m_Bits: 256
-  _killRadius: 3
+  _killRadius: 2
 --- !u!1 &2645499227266570378
 GameObject:
   m_ObjectHideFlags: 0
