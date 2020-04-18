@@ -5916,32 +5916,42 @@ PrefabInstance:
     - target: {fileID: 1928325033317972118, guid: 60021c8403865474f8cd39753d714861,
         type: 3}
       propertyPath: m_LocalScale.x
-      value: 2.2
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1928325033317972118, guid: 60021c8403865474f8cd39753d714861,
         type: 3}
       propertyPath: m_LocalScale.y
-      value: 2.2
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1928325033317972118, guid: 60021c8403865474f8cd39753d714861,
         type: 3}
       propertyPath: m_LocalScale.z
-      value: 2.2
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1928325033317972118, guid: 60021c8403865474f8cd39753d714861,
         type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 66
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1928325033317972118, guid: 60021c8403865474f8cd39753d714861,
+        type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1928325033696419351, guid: 60021c8403865474f8cd39753d714861,
         type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -748
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1928325033696419351, guid: 60021c8403865474f8cd39753d714861,
         type: 3}
       propertyPath: m_SizeDelta.y
       value: 200
+      objectReference: {fileID: 0}
+    - target: {fileID: 1928325033696419351, guid: 60021c8403865474f8cd39753d714861,
+        type: 3}
+      propertyPath: m_Pivot.y
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1928325034412166201, guid: 60021c8403865474f8cd39753d714861,
         type: 3}
@@ -6091,9 +6101,9 @@ PrefabInstance:
     - target: {fileID: 2102368701877412565, guid: 60021c8403865474f8cd39753d714861,
         type: 3}
       propertyPath: m_text
-      value: 'Run 500m before time runs out
+      value: 'Run 500m before time runs out.
 
-        Avoid cops'
+        Avoid cops!'
       objectReference: {fileID: 0}
     - target: {fileID: 2102368701877412565, guid: 60021c8403865474f8cd39753d714861,
         type: 3}
@@ -6103,17 +6113,27 @@ PrefabInstance:
     - target: {fileID: 2102368701877412565, guid: 60021c8403865474f8cd39753d714861,
         type: 3}
       propertyPath: m_textInfo.characterCount
-      value: 40
+      value: 42
       objectReference: {fileID: 0}
     - target: {fileID: 2102368701877412566, guid: 60021c8403865474f8cd39753d714861,
         type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -748
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2102368701877412566, guid: 60021c8403865474f8cd39753d714861,
         type: 3}
       propertyPath: m_SizeDelta.y
-      value: 200
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2102368703237024692, guid: 60021c8403865474f8cd39753d714861,
+        type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2102368703237024692, guid: 60021c8403865474f8cd39753d714861,
+        type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 60021c8403865474f8cd39753d714861, type: 3}
