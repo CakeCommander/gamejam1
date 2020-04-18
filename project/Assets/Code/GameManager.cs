@@ -58,8 +58,22 @@ public class GameManager : MonoBehaviour
             }
         }
 
-        if (Input.GetMouseButtonDown(0))
+        if (!_gameStarted && Input.GetMouseButtonDown(0))
         {
+            var cops = GameObject.FindObjectsOfType<Cop>();
+
+            for (int i = 0; i < cops.Length; ++i)
+            {
+                cops[i].StartGame();
+            }
+            
+            var characters = GameObject.FindObjectsOfType<Character>();
+
+            for (int i = 0; i < characters.Length; ++i)
+            {
+                characters[i].StartGame();
+            }
+
             _gameStarted = true;
             _ui.StartGame();
         }

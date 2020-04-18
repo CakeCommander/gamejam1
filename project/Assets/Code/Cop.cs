@@ -28,11 +28,18 @@ public class Cop : MonoBehaviour
     private Transform _target;
 
     [SerializeField] private float _killRadius = 3.0f;
+
+    private bool _started = false;
     
     void Start()
     {
         _startPos = transform.position;
         _anim.SetFloat("Move", 0);
+    }
+    
+    public void StartGame()
+    {
+        _started = true;
         GetNewDesination();
         InvokeRepeating(nameof(CheckForTargets), 1f, 1f);
     }
@@ -40,6 +47,10 @@ public class Cop : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if (!_started)
+        {
+            return;
+        }
         if (_target != null)
         {
             _agent.SetDestination(_target.position);

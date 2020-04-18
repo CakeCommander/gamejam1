@@ -17,6 +17,8 @@ public class Player : MonoBehaviour
         _anim.SetFloat("Move", 0);
     }
 
+    
+
     void Update()
     {
         if (!Input.GetMouseButton(0))

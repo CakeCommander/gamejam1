@@ -20,16 +20,30 @@ public class Character : MonoBehaviour
     private Vector3 _startPos;
     
     private bool _waitingForPath = false;
+    
+    private bool _started = false;
+
+    
     void Start()
     {
         _startPos = transform.position;
         _anim.SetFloat("Move", 0);
+    }
+    
+    public void StartGame()
+    {
+        _started = true;
         GetNewDesination();
     }
 
     // Update is called once per frame
     void Update()
     {
+        if (!_started)
+        {
+            return;
+        }
+        
         if (!_waitingForPath && !_agent.pathPending)
         {
             if (_agent.remainingDistance <= _agent.stoppingDistance)
